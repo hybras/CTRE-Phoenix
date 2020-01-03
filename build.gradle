@@ -1,6 +1,5 @@
 plugins {
     id 'java-library'
-	id 'maven-publish'
 }
 
 repositories {
@@ -12,24 +11,8 @@ repositories {
     }
 	jcenter()
 }
-def version = '5.14.1'
 
-publishing {
-        publications {
-            maven(MavenPublication) {
-                groupId = 'com.ctre.phoenix'
-                artifactId = 'phoenix'
-                version = "${version}"
-
-                from components.java
-				pom {
-					name = 'CTRE Phoenix'
-                	description = "A one stop shop for CTRE's Phoenix Library"
-                	url = 'https://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources'
-				}
-            }
-        }
-    }
+version = '5.14.1'
 
 dependencies {
     api "com.ctre.phoenix:api-java:${version}"
