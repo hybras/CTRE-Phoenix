@@ -4,7 +4,7 @@ plugins {
 
 repositories {
     maven {
-        url 'http://devsite.ctr-electronics.com/maven/release/'
+        url 'https://devsite.ctr-electronics.com/maven/release/'
 		content {
 			includeGroup 'com.ctre.phoenix'
 		}
@@ -12,14 +12,17 @@ repositories {
 	jcenter()
 }
 
-version = '5.14.1'
+version = '5.17.3'
 
 dependencies {
+//	 http://devsite.ctr-electronics.com/maven/release/com/ctre/phoenix/Phoenix-latest.json
     api "com.ctre.phoenix:api-java:${version}"
     implementation "com.ctre.phoenix:wpiapi-java:${version}"
     implementation "com.ctre.phoenix:cci:${version}"
     implementation "com.ctre.phoenix:canutils:${version}"
     implementation "com.ctre.phoenix:platform-stub:${version}"
+    implementation "com.ctre.phoenix:diagnostics:${version}"
+    implementation "com.ctre.phoenix:core:${version}"
 
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5+'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5+'
